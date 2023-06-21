@@ -1,10 +1,10 @@
 
 import os
-import shutil
+
 filelist = []
 
 #path of the the folder you want to sort
-src = (r'C:\Users\'UserName'\Downloads') 
+src = "in/"
 
 
 extOnly = set()
@@ -30,6 +30,6 @@ for k in extOnly:
 for file in filelist:
     extFinal = file.split('.')
     try:
-        os.rename(file, extFinal[1] + "_Files/" + file)
-    except (OSError, IndexError):
-        continue
+        os.rename(src + file, extFinal[1] + "_Files/" + file)
+    except Exception as e:
+        print(e)
